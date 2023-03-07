@@ -1,24 +1,25 @@
 import './App.css';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Home from './Home';
+import Stopwatch from './Stopwatch';
+import Timer from './Timer';
+import Navbar from './Navbar';
 
 function App() {
-  const [time, setTime] = useState(new Date());
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
   return (
-    <div className="App">
-      <h1>Current Time:</h1>
-      <h2>{time.toLocaleTimeString()}</h2>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/stopwatch" element={<Stopwatch />} />
+        <Route path="/timer" element={<Timer />} />
+      </Routes>
+    </Router>
   );
 }
 
-export default App;
+export default App
