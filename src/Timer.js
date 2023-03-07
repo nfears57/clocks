@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import './Timer.css'
 
 function Timer() {
   const [time, setTime] = useState(0);
@@ -55,22 +56,22 @@ function Timer() {
   ));
 
   return (
-    <div>
+    <div className="timer-container">
       <h1>Timer</h1>
       <div>
-        <select value={selectedMinutes} onChange={handleMinutesChange}>
+        <select className="timer-select" value={selectedMinutes} onChange={handleMinutesChange}>
           {minutesOptions}
         </select>minutes
-        <select value={selectedSeconds} onChange={handleSecondsChange}>
+        <select className="timer-select" value={selectedSeconds} onChange={handleSecondsChange}>
           {secondsOptions}
         </select>seconds
-        <button onClick={isRunning ? stop : start}>
+        <button className="timer-button" onClick={isRunning ? stop : start}>
           {isRunning ? 'Stop' : 'Start'}
         </button>
-        <button onClick={reset}>Reset</button>
+        <button className="timer-button" onClick={reset}>Reset</button>
       </div>
-      <div>
-        <p>{time > 0 ? formatTime(time) : 'Time up!'}</p>
+      <div className="timer-display">
+        <p>{time > 0 ? formatTime(time) : 'Times up!'}</p>
       </div>
     </div>
   );

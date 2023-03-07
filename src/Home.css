@@ -1,0 +1,32 @@
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+ body {
+    background-color: #31e22b; /* Replace this color code with your preferred color */
+  }
+  
+  .clock {
+    font-size: 5rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .time {
+    font-family: monospace;
+  }
+  
+  .timezone {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #aaa;
+  }
+  
